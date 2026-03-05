@@ -1,0 +1,65 @@
+---
+import { Menu } from "@lucide/astro";
+
+const path = Astro.url.pathname;
+
+const links = [
+  { name: "Inicio", href: "/" },
+  { name: "Desarrollador", href: "/desarrollador" },
+  { name: "Alternativas", href: "/alternativas" },
+];
+---
+
+<div class="navbar bg-base-200">
+  <div class="flex justify-start px-2 md:pl-10 lg:pl-60">
+    <div class="flex items-stretch">
+      <div class="dropdown dropdown-start">
+        <div
+          tabindex="0"
+          role="button"
+          class="btn btn-ghost rounded-field md:hidden"
+        >
+          <Menu />
+        </div>
+        <ul
+          tabindex="-1"
+          class="menu dropdown-content bg-base-200 rounded-box z-1 mt-4 w-52 p-2 shadow-sm"
+        >
+          {
+            links.map((link) => (
+              <li>
+                <a
+                  class:list={[{ "menu-active": path === link.href }]}
+                  href={link.href}
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ps-2">
+    <a href="/" class="text-lg font-bold">WASM</a>
+  </div>
+
+  <ul
+    class="hidden md:flex grow justify-end menu menu-horizontal bg-base-200 rounded-box md:pr-10 lg:pr-60"
+  >
+    {
+      links.map((link) => (
+        <li>
+          <a
+            class:list={[{ "menu-active": path === link.href }]}
+            href={link.href}
+          >
+            {link.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
