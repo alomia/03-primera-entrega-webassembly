@@ -2,12 +2,13 @@
 interface Props {
   overline: string;
   title: string;
+  background?: string;
 }
 
-const { overline, title } = Astro.props;
+const { overline, title, background = "bg-base-200" } = Astro.props;
 ---
 
-<div class="bg-base-200 py-20">
+<div class:list={[background, "py-20"]}>
   <div class="card-body space-y-14">
     <div class="text-center space-y-3">
       <h2 class="text-lg font-bold text-primary uppercase">{overline}</h2>
