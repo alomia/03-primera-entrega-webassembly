@@ -1,0 +1,25 @@
+---
+interface Props {
+  year: string;
+  title: string;
+  description: string;
+  alignEnd?: boolean;
+}
+
+const { year, title, description, alignEnd = true } = Astro.props;
+---
+
+<div
+  class:list={[
+    "card card-border bg-base-100 max-w-md timeline-start mb-10 md:text-end",
+    { "timeline-end md:text-start": alignEnd },
+  ]}
+>
+  <div class="card-body">
+    <time class="font-mono italic text-primary">{year}</time>
+    <h2 class="text-lg font-black">{title}</h2>
+    <p class="text-base-content/70">
+      {description}
+    </p>
+  </div>
+</div>
