@@ -1,0 +1,45 @@
+---
+import SectionWrapper from "../ui/SectionWrapper.astro";
+
+const multimediaConcepts = [
+  {
+    title: "Compilacion",
+    description:
+      "Los lenguajes de alto nivel como C, C++, Go y Rust se compilan a formato .wasm usando herramientas como Emscripten o wasm-pack, generando binarios optimizados.",
+  },
+
+  {
+    title: "Ejecucion",
+    description:
+      "El navegador decodifica el binario Wasm, lo compila a codigo maquina nativo y lo ejecuta en un entorno seguro (sandbox), alcanzando velocidades cercanas al rendimiento nativo.",
+  },
+];
+---
+
+<SectionWrapper overline="Multimedia" title="WebAssembly en accion">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex flex-col gap-5">
+      <iframe
+        class="card shadow-sm w-full h-[315px] md:h-[415px] lg:h-[515px]"
+        src="https://www.youtube.com/embed/cbB3QEwWMlA?si=eZ08dvoUcc6XvGJU"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+
+      <div class="flex flex-col lg:flex-row gap-5">
+        {
+          multimediaConcepts.map((concept) => (
+            <div class="card bg-base-100 shadow-sm">
+              <div class="card-body">
+                <h2 class="uppercase text-primary">{concept.title}</h2>
+                <p class="text-base-content/70">{concept.description}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</SectionWrapper>

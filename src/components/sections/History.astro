@@ -1,0 +1,67 @@
+---
+import BadgeCheck from "@lucide/astro/icons/badge-check";
+import SectionWrapper from "../ui/SectionWrapper.astro";
+import HistoryCard from "../ui/HistoryCard.astro";
+
+const historyEvents = [
+  {
+    year: "2015",
+    title: "Anuncio oficial",
+    description:
+      "WebAssembly fue anunciado como una colaboración entre Mozilla, Google, Microsoft y Apple para crear un nuevo formato binario para la web.",
+  },
+  {
+    year: "2017",
+    title: "Soporte en navegadores",
+    description:
+      "Los principales navegadores (Chrome, Firefox, Safari y Edge) lanzan soporte para WebAssembly de forma simultánea.",
+  },
+  {
+    year: "2018",
+    title: "Especificación Core 1.0",
+    description:
+      "El W3C publica la primera versión estable de la especificación, consolidando WebAssembly como estándar web oficial.",
+  },
+  {
+    year: "2019",
+    title: "Expansión fuera del navegador",
+    description:
+      "Con WASI (WebAssembly System Interface), Wasm comienza a ejecutarse fuera del navegador en servidores, IoT y edge computing.",
+  },
+  {
+    year: "2022",
+    title: "Especificación 2.0",
+    description:
+      "Se publican extensiones como tipos de referencia, instrucciones SIMD y multi-valor, ampliando las capacidades del runtime.",
+  },
+  {
+    year: "2024",
+    title: "Ecosistema maduro",
+    description:
+      "Component Model y WASI Preview 2 prometen interoperabilidad entre lenguajes y un futuro portable para las aplicaciones.",
+  },
+];
+---
+
+<SectionWrapper overline="Historia" title="La evolucion de WebAssembly">
+  <ul
+    class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical"
+  >
+    {
+      historyEvents.map((event, index) => (
+        <li>
+          <div class="timeline-middle">
+            <BadgeCheck />
+          </div>
+          <HistoryCard
+            year={event.year}
+            title={event.title}
+            description={event.description}
+            alignEnd={index % 2 == 0}
+          />
+          <hr />
+        </li>
+      ))
+    }
+  </ul>
+</SectionWrapper>

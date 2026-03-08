@@ -1,0 +1,45 @@
+---
+import { Code, Globe, Zap } from "@lucide/astro";
+import SectionWrapper from "../ui/SectionWrapper.astro";
+
+import InfoCard from "../ui/InfoCard.astro";
+
+const concepts = [
+  {
+    title: "¿Qué es WebAssembly?",
+    description:
+      "WebAssembly (Wasm) es un formato de instrucciones binarias de bajo nivel diseñado para ejecutarse en una máquina virtual basada en pila. Permite que lenguajes como C, C++ y Rust se compilen a un formato que los navegadores pueden ejecutar de forma nativa a velocidades cercanas al código máquina.",
+    icon: Code,
+  },
+  {
+    title: "¿Por qué fue creado?",
+    description:
+      "JavaScript, aunque versátil, tiene limitaciones de rendimiento para aplicaciones intensivas como juegos 3D, edición de video o simulaciones científicas. WebAssembly fue diseñado para complementar JavaScript, ofreciendo una vía rápida de ejecución para tareas computacionales pesadas.",
+    icon: Zap,
+  },
+  {
+    title: "¿Qué problemas resuelve?",
+    description:
+      "Wasm resuelve la brecha de rendimiento en aplicaciones web complejas, permite reutilizar código existente en C/C++/Rust en la web, y proporciona un entorno de ejecución seguro y portable que funciona de manera consistente en todos los navegadores modernos.",
+    icon: Globe,
+  },
+];
+---
+
+<SectionWrapper
+  overline="Conceptos"
+  title="Entendiendo WebAssembly"
+  background="bg-base-100"
+>
+  <div class="max-w-5xl mx-auto flex flex-col lg:flex-row gap-5">
+    {
+      concepts.map((concept) => (
+        <InfoCard
+          title={concept.title}
+          description={concept.description}
+          icon={concept.icon}
+        />
+      ))
+    }
+  </div>
+</SectionWrapper>
