@@ -1,0 +1,51 @@
+---
+import { BookOpen, Lightbulb, Target } from "@lucide/astro";
+import Section from "../ui/Section.astro";
+import SectionBody from "../ui/SectionBody.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+
+const aboutProjectData = [
+  {
+    title: "Por que elegi WebAssembly?",
+    description:
+      "WebAssembly representa el futuro de la computacion en la web. Quise explorar una tecnologia que va mas alla del JavaScript tradicional y entender como los navegadores modernos pueden ejecutar codigo de alto rendimiento de forma segura.",
+    icon: Lightbulb,
+  },
+  {
+    title: "Que aprendi?",
+    description:
+      "Aprendi sobre la arquitectura de maquinas virtuales, el proceso de compilacion de lenguajes de alto nivel a bytecode, los estandares web del W3C, y como las grandes empresas tecnologicas colaboran para evolucionar la plataforma web.",
+    icon: BookOpen,
+  },
+  {
+    title: "Enfoque tecnico",
+    description:
+      "Este proyecto fue desarrollado con un enfoque en la investigacion y divulgacion tecnica, priorizando la claridad de la informacion, una estructura navegable y un diseño limpio que facilite el aprendizaje.",
+    icon: Target,
+  },
+];
+---
+
+<Section>
+  <SectionBody>
+    <SectionHeader overline="Motivacion" title="Sobre el proyecto" />
+    <div class="grid  gap-10">
+      {
+        aboutProjectData.map(({ title, description, icon: Icon }) => (
+          <div>
+            <div class="flex flex-row gap-5">
+              <div class="badge badge-soft badge-primary px-2 py-5">
+                <Icon />
+              </div>
+
+              <div class="space-y-2">
+                <h2 class="card-title">{title}</h2>
+                <p class="text-base-content/70">{description}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </SectionBody>
+</Section>

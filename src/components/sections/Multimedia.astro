@@ -1,5 +1,8 @@
 ---
-import SectionWrapper from "../ui/SectionWrapper.astro";
+import Section from "../ui/Section.astro";
+import SectionBody from "../ui/SectionBody.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+
 
 const multimediaConcepts = [
   {
@@ -16,8 +19,11 @@ const multimediaConcepts = [
 ];
 ---
 
-<SectionWrapper overline="Multimedia" title="WebAssembly en accion">
-  <div class="max-w-4xl mx-auto">
+
+<Section class="bg-base-200">
+  <SectionBody>
+    <SectionHeader class="text-center" overline="Multimedia" title="WebAssembly en accion"/>
+
     <div class="flex flex-col gap-5">
       <iframe
         class="card shadow-sm w-full h-[315px] md:h-[415px] lg:h-[515px]"
@@ -41,5 +47,6 @@ const multimediaConcepts = [
         }
       </div>
     </div>
-  </div>
-</SectionWrapper>
+  </SectionBody>
+</Section>
+

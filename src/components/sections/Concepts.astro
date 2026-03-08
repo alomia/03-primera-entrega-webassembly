@@ -1,8 +1,10 @@
 ---
 import { Code, Globe, Zap } from "@lucide/astro";
-import SectionWrapper from "../ui/SectionWrapper.astro";
 
 import InfoCard from "../ui/InfoCard.astro";
+import Section from "../ui/Section.astro";
+import SectionBody from "../ui/SectionBody.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
 
 const concepts = [
   {
@@ -26,20 +28,25 @@ const concepts = [
 ];
 ---
 
-<SectionWrapper
-  overline="Conceptos"
-  title="Entendiendo WebAssembly"
-  background="bg-base-100"
->
-  <div class="max-w-5xl mx-auto flex flex-col lg:flex-row gap-5">
-    {
-      concepts.map((concept) => (
-        <InfoCard
-          title={concept.title}
-          description={concept.description}
-          icon={concept.icon}
-        />
-      ))
-    }
-  </div>
-</SectionWrapper>
+<Section class="bg-base-100">
+  <SectionBody>
+    <SectionHeader
+      class="text-center"
+      overline="Conceptos"
+      title="Entendiendo WebAssembly"
+    />
+
+    <div class="max-w-5xl mx-auto flex flex-col lg:flex-row gap-5">
+      {
+        concepts.map((concept) => (
+          <InfoCard
+            class="bg-base-200"
+            title={concept.title}
+            description={concept.description}
+            icon={concept.icon}
+          />
+        ))
+      }
+    </div>
+  </SectionBody>
+</Section>

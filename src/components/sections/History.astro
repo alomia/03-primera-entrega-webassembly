@@ -1,7 +1,9 @@
 ---
 import BadgeCheck from "@lucide/astro/icons/badge-check";
-import SectionWrapper from "../ui/SectionWrapper.astro";
 import HistoryCard from "../ui/HistoryCard.astro";
+import Section from "../ui/Section.astro";
+import SectionBody from "../ui/SectionBody.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
 
 const historyEvents = [
   {
@@ -43,25 +45,28 @@ const historyEvents = [
 ];
 ---
 
-<SectionWrapper overline="Historia" title="La evolucion de WebAssembly">
-  <ul
-    class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical"
-  >
-    {
-      historyEvents.map((event, index) => (
-        <li>
-          <div class="timeline-middle">
-            <BadgeCheck />
-          </div>
-          <HistoryCard
-            year={event.year}
-            title={event.title}
-            description={event.description}
-            alignEnd={index % 2 == 0}
-          />
-          <hr />
-        </li>
-      ))
-    }
-  </ul>
-</SectionWrapper>
+<Section class="bg-base-200" id="historia">
+  <SectionBody>
+    <SectionHeader class="text-center" overline="Historia" title="La evolucion de WebAssembly" />
+    <ul
+      class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical"
+    >
+      {
+        historyEvents.map((event, index) => (
+          <li>
+            <div class="timeline-middle">
+              <BadgeCheck class="text-base-content/60" />
+            </div>
+            <HistoryCard
+              year={event.year}
+              title={event.title}
+              description={event.description}
+              alignEnd={index % 2 == 0}
+            />
+            <hr />
+          </li>
+        ))
+      }
+    </ul>
+  </SectionBody>
+</Section>

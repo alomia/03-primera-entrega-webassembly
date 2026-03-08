@@ -1,7 +1,9 @@
 ---
 import { Gauge, Monitor, Puzzle, Shield } from "@lucide/astro";
-import SectionWrapper from "../ui/SectionWrapper.astro";
 import InfoCard from "../ui/InfoCard.astro";
+import Section from "../ui/Section.astro";
+import SectionBody from "../ui/SectionBody.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
 
 const advantagesData = [
   {
@@ -34,20 +36,25 @@ const advantagesData = [
 ];
 ---
 
-<SectionWrapper
-  overline="Ventajas"
-  title="Por que usar WebAssembly"
-  background="bg-base-100"
->
-  <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5">
-    {
-      advantagesData.map((advantage) => (
-        <InfoCard
-          icon={advantage.icon}
-          title={advantage.title}
-          description={advantage.description}
-        />
-      ))
-    }
-  </div>
-</SectionWrapper>
+<Section>
+  <SectionBody>
+    <SectionHeader
+      class="text-center"
+      overline="Ventajas"
+      title="Por que usar WebAssembly"
+    />
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      {
+        advantagesData.map((advantage) => (
+          <InfoCard
+            class="bg-base-200"
+            icon={advantage.icon}
+            title={advantage.title}
+            description={advantage.description}
+          />
+        ))
+      }
+    </div>
+  </SectionBody>
+</Section>

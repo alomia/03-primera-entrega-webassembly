@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
+  overline: string;
+  title: string;
+}
+
+const { overline, title, class: className, ...rest } = Astro.props;
+---
+
+<div class:list={["space-y-1 mb-10", className]}>
+  <h2 class="text-md md:text-lg font-medium text-primary uppercase">
+    {overline}
+  </h2>
+  <p class="text-2xl md:text-3xl lg:text-4xl font-bold">{title}</p>
+</div>

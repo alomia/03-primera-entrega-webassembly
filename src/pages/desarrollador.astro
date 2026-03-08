@@ -1,9 +1,14 @@
 ---
+import AboutProject from "../components/sections/AboutProject.astro";
+import Contact from "../components/sections/Contact.astro";
+import DevStack from "../components/sections/DevStack.astro";
+import ProfileCard from "../components/sections/ProfileCard.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-
-
 ---
 
 <MainLayout titlle="Desarrollador">
-
+  <ProfileCard />
+  <DevStack />
+  <AboutProject />
+  <Contact />
 </MainLayout>
