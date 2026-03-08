@@ -1,0 +1,38 @@
+---
+const technologies = [
+  "Dart", 
+  "Flutter", 
+  "Golang", 
+  "Python", 
+  "FastAPI", 
+  "Docker", 
+  "Linux"
+];
+---
+
+<section>
+  <div class="max-w-4xl m-auto flex flex-col md:flex-row items-center md:items-start gap-10 p-10">
+
+    <div class="avatar">
+      <div class="w-40 h-40 rounded-full">
+        <img
+          src="https://avatars.githubusercontent.com/u/66052272?s=400&u=df0c3a374e0fecc601c190127fb6fc73fdb03a99&v=4"
+        />
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center md:items-start text-center md:text-left">
+      <h2 class="text-3xl font-extrabold mb-2">Alejandro Alomia</h2>
+      <p class="text-base-content/70 pb-5">Software Developer | Backend & Mobile Engineer</p>
+      
+      <p class="text-base-content/70 mb-5">Construyo aplicaciones móviles con Flutter y sistemas backend en Go y Python. Me enfoco en escribir código limpio, escalar arquitecturas y resolver problemas complejos mediante el uso de herramientas como Docker, Linux y APIs bien diseñadas. Siempre aprendiendo y buscando la mejor forma de que el software funcione.</p>
+      
+      <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+        {
+          technologies.map(technology => <span class="badge badge-soft">{technology}</span>)
+        }
+      </div>
+
+    </div>
+  </div>
+</section>
