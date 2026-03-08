@@ -1,0 +1,100 @@
+---
+import Section from "../ui/Section.astro";
+import SectionBody from "../ui/SectionBody.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+
+import StatusBadge from "../ui/StatusBadge.astro";
+
+const headers = ["Característica", "WebAssembly", "JavaScript", "asm.js"];
+
+type Status = "yes" | "no" | "partial";
+
+interface ComparisonRow {
+  feature: string;
+  wasm: Status;
+  js: Status;
+  asm: Status;
+}
+
+const tableData: ComparisonRow[] = [
+  {
+    feature: "Rendimiento cercano al nativo",
+    wasm: "yes",
+    js: "no",
+    asm: "partial",
+  },
+  {
+    feature: "Soporte en todos los navegadores modernos",
+    wasm: "yes",
+    js: "yes",
+    asm: "yes",
+  },
+  {
+    feature: "Ejecución en sandbox seguro",
+    wasm: "yes",
+    js: "yes",
+    asm: "yes",
+  },
+  {
+    feature: "Soporte multi-lenguaje (C, Rust, etc.)",
+    wasm: "yes",
+    js: "no",
+    asm: "partial",
+  },
+  {
+    feature: "Interoperabilidad con DOM",
+    wasm: "partial",
+    js: "yes",
+    asm: "partial",
+  },
+  { feature: "Tamaño de binario compacto", wasm: "yes", js: "no", asm: "no" },
+  {
+    feature: "Ejecución fuera del navegador (WASI)",
+    wasm: "yes",
+    js: "yes",
+    asm: "no",
+  },
+  { feature: "Facilidad de depuración", wasm: "partial", js: "yes", asm: "no" },
+  {
+    feature: "Ecosistema y comunidad amplia",
+    wasm: "partial",
+    js: "yes",
+    asm: "no",
+  },
+];
+---
+
+<Section class="bg-base-200">
+  <SectionBody>
+    <SectionHeader overline="Comparacion" title="Tabla comparativa" />
+
+    <div class="overflow-x-auto">
+      <table class="table table-zebra">
+        <thead>
+          <tr class="text-base">
+            {headers.map((head) => <th>{head}</th>)}
+          </tr>
+        </thead>
+
+        <tbody>
+          {
+            tableData.map(({ feature, wasm, js, asm }) => (
+              <tr>
+                <td>{feature}</td>
+                <td>
+                  <StatusBadge status={wasm as "yes" | "no" | "partial"} />
+                </td>
+                <td>
+                  <StatusBadge status={js as "yes" | "no" | "partial"} />
+                </td>
+                <td>
+                  <StatusBadge status={asm as "yes" | "no" | "partial"} />
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </SectionBody>
+</Section>

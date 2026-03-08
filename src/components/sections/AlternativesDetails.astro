@@ -1,0 +1,95 @@
+---
+import FeatureList from "../ui/FeatureList.astro";
+import Section from "../ui/Section.astro";
+import SectionBody from "../ui/SectionBody.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+
+const technologies = [
+  {
+    title: "WebAssembly",
+    titleColor: "text-primary",
+    subtitle: "Rendimiento nativo en la web",
+    advantages: [
+      "Velocidad cercana al código máquina",
+      "Soporte multi-lenguaje (C, C++, Rust, Go)",
+      "Binarios compactos y eficientes",
+      "Entorno de ejecución seguro (sandbox)",
+      "Portable fuera del navegador con WASI",
+    ],
+    limitations: [
+      "No tiene acceso directo al DOM",
+      "Herramientas de depuración menos maduras",
+      "Curva de aprendizaje para desarrolladores web",
+      "Ecosistema en crecimiento pero aún joven",
+    ],
+  },
+  {
+    title: "JavaScript",
+    
+    subtitle: "El lenguaje universal de la web",
+    advantages: [
+      "Acceso directo al DOM y APIs del navegador",
+      "Ecosistema masivo (npm, frameworks)",
+      "Herramientas de desarrollo excelentes",
+      "Fácil de aprender y depurar",
+      "Comunidad enorme y activa",
+    ],
+    limitations: [
+      "Rendimiento limitado para tareas pesadas",
+      "Lenguaje de tipado dinámico (propenso a errores)",
+      "Sobrecarga del garbage collector",
+      "No ideal para computación intensiva",
+    ],
+  },
+  {
+    title: "asm.js",
+    titleColor: "text-base-content/70",
+    subtitle: "Predecesor de WebAssembly",
+    advantages: [
+      "Subconjunto optimizable de JavaScript",
+      "Compatible con navegadores antiguos",
+      "Sirvió como prueba de concepto para Wasm",
+      "No requiere APIs adicionales del navegador",
+    ],
+    limitations: [
+      "Rendimiento inferior a WebAssembly",
+      "Tamaño de archivo grande (texto JS)",
+      "Tecnología considerada obsoleta",
+      "Sin desarrollo activo ni futuro estándar",
+      "Herramientas limitadas y sin soporte moderno",
+    ],
+  },
+];
+---
+
+<Section>
+  <SectionBody>
+    <SectionHeader overline="Detalle" , title="Ventajas y limitaciones" />
+
+    <div class="grid md:grid-cols-3 gap-4">
+      {
+        technologies.map(({ title, titleColor, subtitle, advantages, limitations }) => (
+          <div class="card shadow-sm bg-base-200">
+            <div class="card-body space-y-3">
+              <div>
+                <h2 class={`${titleColor} text-xl font-bold`}>{title}</h2>
+                <p class="text-base-content/70">{subtitle}</p>
+              </div>
+
+              <FeatureList
+                title="Ventajas"
+                items={advantages}
+                color="text-teal-400"
+              />
+              <FeatureList
+                title="Limitaciones"
+                items={limitations}
+                color="text-red-400"
+              />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </SectionBody>
+</Section>

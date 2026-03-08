@@ -1,0 +1,21 @@
+---
+import { Check, Minus, X } from '@lucide/astro';
+
+interface Props {
+  status: 'yes' | 'no' | 'partial';
+}
+
+const { status } = Astro.props;
+
+const config = {
+  yes: { class: 'badge-success', icon: Check },
+  no: { class: 'badge-error', icon: X },
+  partial: { class: 'badge-warning', icon: Minus }
+};
+
+const { class: badgeClass, icon: Icon } = config[status];
+---
+
+<div class={`px-1.5 py-3 rounded-full badge badge-soft ${badgeClass}`}>
+  <Icon size="13" />
+</div>
