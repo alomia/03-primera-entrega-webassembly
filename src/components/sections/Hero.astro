@@ -2,13 +2,24 @@
 import ArrowDown from "@lucide/astro/icons/arrow-down";
 ---
 
-<div class="hero bg-base-100 min-h-screen items-start pt-40">
-  <div class="hero-content text-center">
+<div class="hero bg-base-100 min-h-screen items-start relative overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <div
+      class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"
+    >
+    </div>
+  </div>
+
+  <div class="hero-content text-center z-10 pt-30">
     <div class="max-w-lg lg:max-w-2xl space-y-10">
-      <div class="badge badge-soft lg:badge-lg badge-primary">Fundamentos Web — Proyecto Educativo</div>
-      
-      <h1 class="text-5xl md:text-6xl lg:text-8xl font-bold">Web <span class="text-primary">Assembly</span></h1>
-      
+      <div class="badge badge-soft lg:badge-lg badge-primary">
+        Fundamentos Web — Proyecto Educativo
+      </div>
+
+      <h1 class="text-5xl md:text-6xl lg:text-8xl font-bold">
+        Web <span class="text-primary">Assembly</span>
+      </h1>
+
       <p class="text-base-content/70 lg:text-2xl">
         El formato binario que lleva rendimiento casi nativo a la web. Descubre
         su historia, ventajas y por qué está transformando el desarrollo
@@ -16,8 +27,12 @@ import ArrowDown from "@lucide/astro/icons/arrow-down";
       </p>
 
       <div class="flex gap-4 justify-center">
-        <a class="btn btn-sm md:btn-md btn-primary" href="#historia">Explorar<ArrowDown size={20} /></a>
-        <a class="btn btn-sm md:btn-md btn-outline" href="/alternativas">Ver alternativas</a>
+        <a class="btn btn-sm md:btn-md btn-primary" href="#historia"
+          >Explorar<ArrowDown size={20} /></a
+        >
+        <a class="btn btn-sm md:btn-md btn-outline" href="/alternativas"
+          >Ver alternativas</a
+        >
       </div>
     </div>
   </div>
