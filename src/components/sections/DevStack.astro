@@ -1,0 +1,53 @@
+---
+import InfoCard from "../ui/InfoCard.astro";
+import Section from "../ui/Section.astro";
+import SectionBody from "../ui/SectionBody.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+
+import { Gauge, GitBranch, Palette, Puzzle } from "@lucide/astro";
+
+const stackData = [
+  {
+    title: "Astro",
+    description:
+      "Framework web moderno que genera sitios estáticos ultra-rápidos, ideal para contenido educativo con minima carga de JavaScript.",
+    icon: Gauge,
+  },
+  {
+    title: "Tailwind CSS",
+    description:
+      "Framework de utilidades CSS que permite construir interfaces personalizadas rapidamente sin escribir CSS convencional.",
+    icon: Palette,
+  },
+  {
+    title: "Preline UI",
+    description:
+      "Coleccion de componentes UI pre-construidos basados en Tailwind CSS que aceleran el desarrollo de interfaces profesionales.",
+    icon: Puzzle,
+  },
+  {
+    title: "Git",
+    description:
+      "Sistema de control de versiones distribuido para gestionar el historial de cambios y colaborar en el desarrollo del proyecto.",
+    icon: GitBranch,
+  },
+];
+---
+
+<Section class="bg-base-200">
+  <SectionBody>
+    <SectionHeader class="mb-5" overline="Stack" title="Tecnologias utilizadas" />
+    <div class="grid  md:grid-cols-2 gap-5">
+      {
+        stackData.map((stack) => (
+          <InfoCard
+            class="bg-base-100"
+            icon={stack.icon}
+            title={stack.title}
+            description={stack.description}
+          />
+        ))
+      }
+    </div>
+  </SectionBody>
+</Section>
