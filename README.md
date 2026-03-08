@@ -1,261 +1,82 @@
-# 📘 Primera Entrega – WebAssembly
+# WebAssembly: Fundamentos Web
 
-Proyecto desarrollado para la asignatura **Fundamentos Web**.
-Primera entrega académica enfocada en la construcción de un sitio web multipágina utilizando tecnologías modernas del ecosistema frontend.
-
----
-
-## 📌 Descripción del Proyecto
-
-Este proyecto consiste en la creación de un sitio web informativo sobre **WebAssembly**, cumpliendo con los requisitos establecidos por el docente:
-
-* ✅ 1 página principal (Historia del tema)
-* ✅ 1 página sobre los desarrolladores
-* ✅ 1 página con alternativas al tema principal
-* ✅ Uso de imágenes y videos
-* ✅ Aplicación de estilos, colores y etiquetas correctamente estructuradas
-* ✅ Múltiples páginas enlazadas correctamente
-
-El objetivo no es únicamente cumplir con HTML y CSS básicos, sino aplicar los fundamentos aprendidos utilizando herramientas modernas que respeten la esencia del desarrollo web tradicional.
+Proyecto académico desarrollado para la asignatura **Fundamentos Web**. Este sitio web multipágina explora los conceptos, historia y alternativas de **WebAssembly (Wasm)**, integrando tecnologías modernas para optimizar el rendimiento y la experiencia de usuario.
 
 ---
 
-## 🎯 ¿Por qué WebAssembly?
+## Stack Tecnológico
 
-WebAssembly (Wasm) es un formato de código binario diseñado para ejecutarse en navegadores web con alto rendimiento. Permite utilizar lenguajes como C, C++ o Rust dentro del navegador.
+Este proyecto utiliza herramientas modernas manteniendo una base sólida en estándares web:
 
-Fue creado en colaboración por ingenieros de:
-
-* Mozilla
-* Google
-* Microsoft
-* Apple
-
-Es un tema moderno, relevante y técnicamente interesante dentro del ecosistema web actual.
+* **[Astro](https://astro.build/):** Framework para contenido enfocado en velocidad.
+* **[Tailwind CSS](https://tailwindcss.com/):** Estilos utility-first para diseño responsivo.
+* **[DaisyUI](https://daisyui.com/):** Componentes estéticos sobre Tailwind.
+* **[Lucide Astro](https://lucide.dev/):** Iconografía minimalista.
 
 ---
 
-# 🛠️ Stack Tecnológico
+## 📂 Estructura del Proyecto
 
-Aunque en la materia se trabaja HTML, CSS y JavaScript puro, este proyecto utiliza herramientas modernas que respetan los fundamentos.
+```text
+src/
+├── components/    # Componentes reutilizables (sections, ui)
+├── layouts/       # Estructura base (MainLayout.astro)
+├── pages/         # Rutas de la aplicación
+├── styles/        # Hojas de estilo globales
+└── assets/        # Recursos multimedia
 
-## 🚀 Astro
-
-Astro es un framework enfocado en sitios estáticos y contenido.
-Se eligió porque:
-
-* Permite escribir código muy cercano a HTML puro.
-* Facilita la reutilización de componentes.
-* Mantiene simplicidad (no es un framework pesado como React o Next).
-* Genera sitios altamente optimizados.
-
-Astro permite aplicar buenas prácticas modernas sin perder la comprensión de la estructura HTML tradicional.
-
----
-
-## 🎨 Tailwind CSS
-
-Tailwind CSS es un framework CSS utility-first.
-
-Se eligió porque:
-
-* Permite estilos rápidos y consistentes.
-* Reduce la escritura de CSS manual.
-* Facilita diseño moderno y responsivo.
-* Mejora productividad sin sacrificar control.
-
----
-
-## 🧩 Preline UI
-
-Preline es una librería de componentes basada en Tailwind.
-
-Se utiliza para:
-
-* Componentes interactivos
-* Mejorar la estética
-* Agilizar el desarrollo visual
-
----
-
-## 🔧 Git
-
-Git se utiliza para:
-
-* Control de versiones
-* Manejo de ramas
-* Seguimiento de cambios
-* Buenas prácticas de desarrollo
-
----
-
-# 📂 Estructura General del Proyecto
-
-```
-03-primera-entrega-webassembly/
-│
-├── src/
-│   ├── pages/
-│   │   ├── index.astro
-│   │   ├── desarrolladores.astro
-│   │   └── alternativas.astro
-│   │
-│   ├── components/
-│   └── assets/
-│
-├── public/
-├── package.json
-└── README.md
 ```
 
 ---
 
-# 🖥️ Instalación y Ejecución Local
+## Cómo ejecutar el proyecto
 
-## 1️⃣ Clonar el repositorio
+Asegúrate de tener instalado [Node.js](https://nodejs.org/).
 
+1. **Clonar el repositorio:**
 ```bash
-git clone https://github.com/usuario/03-primera-entrega-webassembly.git
+git clone https://github.com/tu-usuario/03-primera-entrega-webassembly.git
 cd 03-primera-entrega-webassembly
+
 ```
 
-## 2️⃣ Instalar dependencias
 
+2. **Instalar dependencias:**
 ```bash
 npm install
+
 ```
 
-## 3️⃣ Ejecutar en modo desarrollo
 
+3. **Iniciar servidor de desarrollo:**
 ```bash
 npm run dev
-```
-
-El proyecto estará disponible en:
 
 ```
-http://localhost:4321
-```
+
+
+*Accede en `http://localhost:4321*`
 
 ---
 
-## 📦 Construcción para producción
+## 📋 Scripts Disponibles
 
-```bash
-npm run build
-```
-
-## 👀 Vista previa del build
-
-```bash
-npm run preview
-```
+| Script | Descripción |
+| --- | --- |
+| `npm run dev` | Inicia el servidor de desarrollo |
+| `npm run build` | Genera el build optimizado para producción |
+| `npm run preview` | Visualiza el build localmente |
 
 ---
 
-# ☁️ Despliegue
+## 🎓 Enfoque Académico
 
-El proyecto está preparado para desplegarse en plataformas como:
-
-* Vercel
-* Netlify
-
-Al ser un sitio estático generado con Astro, el despliegue es directo y sin configuraciones complejas.
+El proyecto busca demostrar la integración de herramientas modernas de frontend sin sacrificar la semántica y estructura del **HTML5**. Se prioriza la legibilidad, el diseño responsivo y la arquitectura de componentes.
 
 ---
 
-# 📚 Contenido del Sitio
+## 👨‍🎓 Autor
 
-## 🏠 Página Principal
-
-* Historia de WebAssembly
-* Contexto y evolución
-* Imágenes explicativas
-* Video introductorio
-
-## 👨‍💻 Página de Desarrolladores
-
-* Empresas involucradas
-* Objetivo del proyecto Wasm
-* Impacto en la industria
-
-## 🔄 Página de Alternativas
-
-Comparación con:
-
-* JavaScript
-* asm.js
-* Otras tecnologías de ejecución web
+**Alejandro Alomia** *Fundamentos Web - 2026*
 
 ---
-
-# 🎓 Enfoque Académico
-
-Aunque se utilizan herramientas modernas, este proyecto:
-
-* Mantiene estructura semántica HTML.
-* Aplica correctamente etiquetas vistas en clase.
-* Implementa estilos coherentes y organizados.
-* Integra contenido multimedia.
-* Respeta la arquitectura multipágina solicitada.
-
-El uso de Astro y Tailwind no reemplaza los fundamentos, sino que los potencia.
-
----
-
-# 📌 Scripts Disponibles
-
-```json
-"scripts": {
-  "dev": "astro dev",
-  "build": "astro build",
-  "preview": "astro preview",
-  "astro": "astro"
-}
-```
-
----
-
-# 📖 Dependencias Principales
-
-```json
-"astro": "^5.17.1",
-"tailwindcss": "^4.2.1",
-"@tailwindcss/vite": "^4.2.1",
-"preline": "^4.1.2"
-```
-
----
-
-# 👨‍🎓 Autor
-
-Alejandro Alomia
-Estudiante – Fundamentos Web
-Universidad (Primera Entrega – 2026)
-
----
-
-# 🧠 Reflexión Técnica
-
-Este proyecto demuestra que es posible aplicar fundamentos clásicos del desarrollo web utilizando herramientas modernas sin perder claridad estructural ni comprensión técnica.
-
-Se priorizó:
-
-* Organización
-* Escalabilidad
-* Claridad semántica
-* Buenas prácticas
-* Diseño moderno y responsivo
-
----
-
-Si deseas extender el proyecto, puedes:
-
-* Agregar ejemplos prácticos de WebAssembly
-* Integrar un pequeño módulo Wasm
-* Añadir comparativas técnicas más profundas
-* Incorporar métricas de rendimiento
-
----
-
-**Primera Entrega – Fundamentos Web – 2026**
