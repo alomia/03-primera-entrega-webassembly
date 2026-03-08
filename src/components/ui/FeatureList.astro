@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+  items: string[];
+  color: 'text-teal-400' | 'text-red-400';
+}
+
+const { title, items, color } = Astro.props;
+---
+
+<div class="flex flex-col gap-2">
+  <span class=`${color} uppercase font-semibold`>{title}</span>
+  <ul class="list-disc list-inside space-y-1">
+    {
+      items.map((item) => (
+        <li class={color}>
+          <span class="text-base-content/70">{item} </span>
+        </li>
+      ))
+    }
+  </ul>
+</div>
