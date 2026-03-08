@@ -1,0 +1,76 @@
+---
+import { Calculator, Gamepad, Globe } from "@lucide/astro";
+import Section from "../ui/Section.astro";
+import SectionBody from "../ui/SectionBody.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+
+const useCases = [
+  {
+    title: "WebAssembly",
+    subtitle: "Cuando necesitas máximo rendimiento",
+    icon: Gamepad,
+    cases: [
+      "Juegos 3D y motores gráficos en el navegador",
+      "Simulaciones científicas y físicas",
+      "Portar aplicaciones nativas existentes a la web",
+      "Edicion de video, audio o imagenes en tiempo real",
+      "Codecs y procesamiento de datos intensivo",
+    ],
+  },
+  {
+    title: "JavaScript",
+    subtitle: "Para la mayoria de aplicaciones web",
+    icon: Globe,
+    cases: [
+      "Interfaces de usuario interactivas (React, Vue, Angular)",
+      "Manipulacion del DOM y animaciones",
+      "Desarrollo full-stack con Node.js",
+      "Aplicaciones web convencionales (e-commerce, SaaS)",
+      "Integracion con APIs REST y GraphQL",
+    ],
+  },
+  {
+    title: "asm.js",
+    subtitle: "Solo en contextos legacy",
+    icon: Calculator,
+    cases: [
+      "Soporte para navegadores muy antiguos que no tienen Wasm",
+      "Referencia historica y estudio academico",
+      "Proyectos heredados que aun no han migrado",
+    ],
+  },
+];
+---
+
+<Section class="bg-base-200">
+  <SectionBody>
+    <SectionHeader overline="Guia" title="Cuando usar cada tecnologia" />
+    <div class="space-y-5">
+      {
+        useCases.map(({ title, subtitle, cases, icon: Icon }) => (
+          <div class="card card-dash bg-base-100">
+            <div class="card-body">
+              <div class="flex gap-5 mb-2">
+                <div class="badge badge-soft badge-primary badge-lg px-2 py-5">
+                  <Icon />
+                </div>
+                <div>
+                  <h2 class="text-lg font-bold">{title}</h2>
+                  <p class="text-base-content/70">{subtitle}</p>
+                </div>
+              </div>
+
+              <ul class="list-disc list-inside space-y-1 grid grid-cols-1 md:grid-cols-2">
+                {cases.map((use) => (
+                  <li class="text-primary">
+                    <span class="text-base-content/70">{use} </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </SectionBody>
+</Section>
