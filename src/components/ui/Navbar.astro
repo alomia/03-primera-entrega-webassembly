@@ -10,7 +10,7 @@ const links = [
 ];
 ---
 
-<div class="navbar bg-base-200">
+<div class="navbar backdrop-blur-sm sticky top-0 z-50 shadow-md">
   <div class="flex justify-start px-2 md:pl-10 lg:pl-60">
     <div class="flex items-stretch">
       <div class="dropdown dropdown-start">
@@ -43,17 +43,17 @@ const links = [
   </div>
 
   <div class="ps-2">
-    <a href="/" class="text-lg font-bold">WASM</a>
+    <a href="/" class="text-3xl tracking-widest font-extrabold text-primary">WASM</a>
   </div>
 
   <ul
-    class="hidden md:flex grow justify-end menu menu-horizontal bg-base-200 rounded-box md:pr-10 lg:pr-60"
+    class="hidden md:flex gap-1 grow justify-end menu menu-horizontal rounded-box md:pr-10 lg:pr-60"
   >
     {
       links.map((link) => (
         <li>
           <a
-            class:list={[{ "menu-active": path === link.href }]}
+            class:list={[{ "bg-primary": path === link.href }]}
             href={link.href}
           >
             {link.name}
