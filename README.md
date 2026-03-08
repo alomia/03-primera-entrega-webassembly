@@ -4,6 +4,13 @@ Proyecto académico desarrollado para la asignatura **Fundamentos Web**. Este si
 
 ---
 
+## Vista Previa del Proyecto
+
+¿Quieres ver el resultado final rápidamente? Accede al despliegue oficial aquí:
+**[alomia-webassembly.netlify.app](https://alomia-webassembly.netlify.app/)**
+
+---
+
 ## Stack Tecnológico
 
 Este proyecto utiliza herramientas modernas manteniendo una base sólida en estándares web:
@@ -15,7 +22,7 @@ Este proyecto utiliza herramientas modernas manteniendo una base sólida en est�
 
 ---
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```text
 src/
@@ -59,7 +66,7 @@ npm run dev
 
 ---
 
-## 📋 Scripts Disponibles
+## Scripts Disponibles
 
 | Script | Descripción |
 | --- | --- |
@@ -69,14 +76,12 @@ npm run dev
 
 ---
 
-## 🎓 Enfoque Académico
+## Enfoque Académico
 
 El proyecto busca demostrar la integración de herramientas modernas de frontend sin sacrificar la semántica y estructura del **HTML5**. Se prioriza la legibilidad, el diseño responsivo y la arquitectura de componentes.
 
 ---
 
-## 👨‍🎓 Autor
+## Autor
 
 **Alejandro Alomia** *Fundamentos Web - 2026*
-
----
