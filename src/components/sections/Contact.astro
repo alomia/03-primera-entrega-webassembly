@@ -1,0 +1,50 @@
+---
+import { Github, Linkedin, Mail } from "@lucide/astro";
+import Section from "../ui/Section.astro";
+import SectionBody from "../ui/SectionBody.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+
+const contactLinks = [
+  {
+    title: "GitHub",
+    description: "Revisa el código fuente",
+    icon: Github,
+    href: "https://github.com/alomia/03-primera-entrega-webassembly",
+  },
+  {
+    title: "LinkedIn",
+    description: "Conectemos profesionalmente",
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/alejandro-alomia-backend-developer/",
+  },
+  {
+    title: "Email",
+    description: "Envíame un mensaje",
+    icon: Mail,
+    href: "mailto:alejandroalomia730@gmail.com",
+  },
+];
+---
+
+<Section class="bg-base-200">
+  <SectionBody>
+    <SectionHeader overline="Contacto" title="Conectemos" />
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {
+        contactLinks.map(({ title, description, icon: Icon, href }) => (
+          <a class="card bg-base-100 border-2 border-transparent hover:border-primary hover:cursor-pointer" href={href} target="_blank">
+            <div class="card-body flex-row gap-5">
+              <div class="badge badge-soft badge-primary px-2 py-5">
+                <Icon />
+              </div>
+              <div>
+                <h2 class="card-title">{title}</h2>
+                <p class="text-base-content/70">{description}</p>
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </SectionBody>
+</Section>
