@@ -1,0 +1,53 @@
+---
+import { Gauge, Monitor, Puzzle, Shield } from "@lucide/astro";
+import SectionWrapper from "../ui/SectionWrapper.astro";
+import InfoCard from "../ui/InfoCard.astro";
+
+const advantagesData = [
+  {
+    title: "Alto rendimiento",
+    description:
+      "Ejecucion a velocidad cercana al codigo nativo. Ideal para aplicaciones exigentes como juegos, procesamiento de imagenes y simulaciones.",
+    icon: Gauge,
+  },
+
+  {
+    title: "Seguridad",
+    description:
+      "Se ejecuta en un entorno aislado (sandbox) dentro del navegador, con un modelo de seguridad basado en permisos que protege al usuario.",
+    icon: Shield,
+  },
+
+  {
+    title: "Portabilidad",
+    description:
+      "Un unico binario .wasm funciona en cualquier plataforma con un runtime compatible: navegadores, servidores, dispositivos IoT y mas.",
+    icon: Monitor,
+  },
+
+  {
+    title: "Compatibilidad",
+    description:
+      "Funciona junto a JavaScript de forma fluida. Puede llamar funciones JS y viceversa, permitiendo una adopcion incremental sin reescribir codigo.",
+    icon: Puzzle,
+  },
+];
+---
+
+<SectionWrapper
+  overline="Ventajas"
+  title="Por que usar WebAssembly"
+  background="bg-base-100"
+>
+  <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5">
+    {
+      advantagesData.map((advantage) => (
+        <InfoCard
+          icon={advantage.icon}
+          title={advantage.title}
+          description={advantage.description}
+        />
+      ))
+    }
+  </div>
+</SectionWrapper>
